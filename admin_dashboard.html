@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <nav>
+        <a href="notice_board.html">Notice Board</a> |
+        <a href="reports.html">Reports</a> |
+        <a href="index.html">Logout</a>
+    </nav>
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+    
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+    
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+    
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+    
+</body>
+</html>

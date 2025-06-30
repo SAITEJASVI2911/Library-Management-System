@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request a Book</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/request.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Request a Book</h1>
+        <form id="requestForm">
+            <input type="text" id="bookTitle" placeholder="Book Title" required><br>
+            <input type="text" id="bookAuthor" placeholder="Author Name" required><br>
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+
+        <h2>Pending Book Requests</h2>
+        <div id="requestList">
+            <!-- Book requests will be shown here -->
+        </div>
+
+        <br>
+        <button onclick="goBack()" class="btn">Back to Dashboard</button>
+    </div>
+</body>
+</html>
